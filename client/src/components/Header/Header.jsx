@@ -11,17 +11,17 @@ const Header = () => {
         <h1 className={styles.title}>To-Do List</h1>
         <ul className={styles.socialMedia}>
           <li>
-            <a className={styles.link} href="https://linkedin.com" target="blank">
+            <a className={styles.link} href="https://linkedin.com" target="blank" rel="noopener noreferrer">
               <img src={linkedin} alt="" />
             </a>
           </li>
           <li>
-            <a className={styles.link} href="https://github.com" target="blank">
+            <a className={styles.link} href="https://github.com" target="blank" rel="noopener noreferrer">
               <img src={github} alt="" />
             </a>
           </li>
           <li>
-            <a className={styles.link} href="https://t.me" target="blank">
+            <a className={styles.link} href="https://t.me" target="blank" rel="noopener noreferrer">
               <img src={telegram} alt="" />
             </a>
           </li>
