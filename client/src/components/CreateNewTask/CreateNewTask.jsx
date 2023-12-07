@@ -2,6 +2,8 @@ import { useState } from "react";
 import Title from "../Title/Title";
 import styles from "./CreateNewTask.module.css";
 
+import addIcon from "../../assets/icon-add.svg"
+
 const CreateNewTask = () => {
   const [inputValue, setInputValue] = useState("");
 
@@ -27,7 +29,9 @@ const CreateNewTask = () => {
           placeholder="Nome da tarefa"
           type="text"
         />
-        <button type="submit">Add ae paizao</button>
+        <button type="submit">
+        <img src={addIcon} alt="Adicionar tarefa" />
+        </button>
       </form>
     </div>
   );
