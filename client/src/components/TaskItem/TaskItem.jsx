@@ -1,35 +1,39 @@
 import { useContext } from "react";
 import styles from "./TaskItem.module.css";
 import { AppContext } from "../../AppContent";
-
 import checkedIcon from "../../assets/icon-checked.svg";
+
 
 const TaskItem = ({ task }) => {
   const { handleTaskEdit, handleTaskDelete } = useContext(AppContext);
-
   return (
     <li className={styles.container}>
       <label>
         <input
+          className={styles.inputCheckbox}
           type="checkbox"
-          className={styles.inputCheckBox}
           checked={task.done}
           onChange={(e) => handleTaskEdit(task.id, e.target.checked)}
         />
         <div
           className={`${styles.customCheckbox} ${
-            !task.done && styles.customCheckboxCheck
+            !task.done && styles.customCheckboxChecked
           }`}
         >
           {task.done && (
             <div className={styles.customCheckboxChecked}>
-              <img src={checkedIcon} alt="Ícone de marcação" />
+              <img src={checkedIcon} alt="Icone de marcação" />
             </div>
           )}
         </div>
       </label>
       <span className={styles.taskName}>{task.name}</span>
-      <button onClick={() => handleTaskDelete(task.id)} className={styles.trashButton}>
+
+
+      <button
+        className={styles.trashButton}
+        onClick={() => handleTaskDelete(task.id)}
+      >
         <svg
           width="24"
           height="24"
@@ -46,5 +50,6 @@ const TaskItem = ({ task }) => {
     </li>
   );
 };
+
 
 export default TaskItem;

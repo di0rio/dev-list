@@ -5,7 +5,7 @@ export const AppContext = createContext(null);
 export const AppStorage = ({ children }) => {
   const [taskList, setTasklist] = useState(() => {
     const data = localStorage.getItem("taskList"); //"", porque esta em um banco de dados
-    return data ? JSON.parse : [];
+    return data ? JSON.parse(data) : [];
   });
 
   const [progressBarValue, setProgressBarValue] = useState(0);
@@ -14,7 +14,7 @@ export const AppStorage = ({ children }) => {
     const newTaskList = [...taskList];
     newTaskList.push({
       id: taskList.length + 1,
-      text: taskName,
+      name: taskName,
       done: false,
     });
     setTasklist(newTaskList);
